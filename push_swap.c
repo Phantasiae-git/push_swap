@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 00:58:45 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/23 18:41:37 by rfontes-         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:10:58 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
+	//divide here
 	stacka = (int *)malloc(sizeof(int) * (argc - 1));
 	if (!stacka)
 		return (error());
@@ -105,15 +106,14 @@ int	main(int argc, char **argv)
 	while ((++i + 1) < argc)
 		stacka[i] = ft_atol(argv[i + 1]);
 	stackb = NULL;
+	int membersb;
+	membersb=0;
 	if (check_sorted(stacka, membersa))
-	{
 		ft_printf("Already sorted\n");
-		return (0);
-	}
 	else
 	{
 		ft_printf("Not sorted\n");
-		sort(stacka, stackb, membersa, 0);
-		return (0);
+		sort(stacka, stackb, &membersa, &membersb);
 	}
+	return(0);
 }

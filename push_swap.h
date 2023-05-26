@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 01:01:28 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/25 14:30:54 by rfontes-         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:17:09 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@
 // }	t_stack;
 
 
-void	sort(int *stacka, int *stackb, int membersa, int membersb);
+void	sort(int *stacka, int *stackb, int *membersa, int *membersb);
 void	swap(int *a, int members);
-void	push(int *a, int *b, int membersa, int membersb);
+void	push(int **a, int **b, int *membersa, int *membersb);
 void	rotate(int *a, int members);
 void	revrotate(int *a, int members);
 void	sa(int *a, int members);
 void	sb(int *b, int members);
 void	ss(int *a, int *b, int membersa, int membersb);
-void	pa(int *a, int *b, int membersa, int membersb);
-void	pb(int *a, int *b, int membersa, int membersb);
+void	pa(int **a, int **b, int *membersa, int *membersb);
+void	pb(int **a, int **b, int *membersa, int *membersb);
 void	ra(int *a, int members);
 void	rb(int *b, int members);
 void	rr(int *a, int *b, int membersa, int membersb);

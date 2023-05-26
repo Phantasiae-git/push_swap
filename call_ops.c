@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   call_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:16 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/21 12:55:39 by rfontes-         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:04:09 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	ss(int *a, int *b, int membersa, int membersb)
 	ft_printf("ss");
 }
 
-void	pa(int *a, int *b, int membersa, int membersb)
+void	pa(int **a, int **b, int *membersa, int *membersb)
 {
 	push(a, b, membersa, membersb);
 	ft_printf("pa\n");
 }
 
-void	pb(int *a, int *b, int membersa, int membersb)
+void	pb(int **a, int **b, int *membersa, int *membersb)
 {
 	push(b, a, membersb, membersa);
 	ft_printf("pb\n");

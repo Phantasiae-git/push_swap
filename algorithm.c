@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 13:05:28 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/25 14:31:50 by rfontes-         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:52:46 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void printoutput(int *stacka, int membersa)
 	while(i<membersa)
 		ft_printf("%i ", stacka[i++]);
 	ft_printf("Success!\n");
-	exit(0);
+	//exit(0);
 }
 
 void sort3(int *a, int membersa)
@@ -33,27 +33,50 @@ void sort3(int *a, int membersa)
 		rra(a, membersa);
 	else
 		ra(a, membersa);
-	printoutput(a, membersa);
+	//printoutput(a, membersa);
 }
 
-void sortmain(int *stacka, int *stackb, int membersa, int membersb)
+void sort(int *stacka, int *stackb, int *membersa, int *membersb)
 {
 	int pivot;
-
-	pivot=average(stacka, membersa);
-
+	int i;
+	int rotations;
+	int membersaold;
 	
-}
-
-void sort(int *stacka, int *stackb, int membersa, int membersb)
-{
-	if(membersa==2)
+	rotations=0;
+	if(*membersa<4)
 	{
-		sa(stacka,2);
-		printoutput(stacka,2);
+		if(*membersa==2)
+			sa(stacka,2);
+		else if(*membersa==3)
+			sort3(stacka, *membersa);
+		return;
 	}
-	else if(membersa==3)
-		sort3(stacka, membersa);
-	else
-		sortmain(stacka, membersa, stacka, membersb);
+	pivot=stacka[average(stacka, *membersa)];
+	ft_printf("avg=%i\n", pivot);
+	i=-1;
+	membersaold=*membersa;
+	while (++i<membersaold)
+	{
+		if(stacka[0]<pivot)
+			pb(&stacka, &stackb, membersa, membersb);
+		else
+		{
+			ra(stacka, *membersa);
+			rotations++;
+		}
+		printoutput(stacka, *membersa);
+		printoutput(stackb, *membersb);
+	}
+	while (rotations--)
+		rra(stacka, *membersa);
+	printoutput(stacka, *membersa);
+	printoutput(stackb, *membersb);
+	sort(stacka, stackb, membersa, membersb);
+	sort(stackb, stacka, membersb, membersa);
+
+	while(*membersb)
+		pa(&stacka, &stackb, membersa, membersb);
+	if(check_sorted(stacka, *membersa) && !stackb[0])
+		printoutput(stacka, *membersa);
 }
