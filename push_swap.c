@@ -113,7 +113,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("Not sorted\n");
-		sort(stacka, stackb, &membersa, &membersb);
+		sort(stacka, stackb, 0, *membersa-1);
 	}
 	return(0);
 }

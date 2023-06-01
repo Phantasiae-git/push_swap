@@ -24,7 +24,7 @@
 // }	t_stack;
 
 
-void	sort(int *stacka, int *stackb, int *membersa, int *membersb);
+void	sort(int *stacka, int *stackb, int low, int high);
 void	swap(int *a, int members);
 void	push(int **a, int **b, int *membersa, int *membersb);
 void	rotate(int *a, int members);
