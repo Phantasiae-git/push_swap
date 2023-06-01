@@ -6,7 +6,7 @@
 /*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 02:34:36 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/26 20:12:17 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/01 16:35:50 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,36 @@ void	swap(int *a, int members)
 	a[1] = temp;
 }
 
-void	push(int **a, int **b, int *membersa, int *membersb)
+void	push(int **a, int **b, int *membersa, int membersb)
+{
+	int	*a2;
+	int	*b2;
+	int	i;
+
+	//pushes from b to a
+	if (membersb == 0)
+		return ;
+	a2 = malloc(sizeof(int) * (*membersa + 1));
+	if (membersb > 1)
+		b2 = malloc(sizeof(int) * (membersb - 1));
+	i = -1;
+	while (++i < (*membersa))
+		a2[i + 1] = (*a)[i];
+	a2[0] = (*b)[0];
+	i = -1;
+	while (++i < (membersb - 1))
+		b2[i] = (*b)[i + 1];
+	(*membersa)++;
+	membersb--;
+	/*ft_printf("destination array:");
+	printoutput(a2, *membersa);
+	ft_printf("source array:");
+	printoutput(b2, *membersb);*/
+	*a = a2;
+	*b = b2;
+}
+
+/*void	push(int **a, int **b, int *membersa, int *membersb)
 {
 	int	*a2;
 	int	*b2;
@@ -44,13 +73,13 @@ void	push(int **a, int **b, int *membersa, int *membersb)
 		b2[i] = (*b)[i + 1];
 	(*membersa)++;
 	(*membersb)--;
-	/*ft_printf("destination array:");
+	ft_printf("destination array:");
 	printoutput(a2, *membersa);
 	ft_printf("source array:");
-	printoutput(b2, *membersb);*/
+	printoutput(b2, *membersb);
 	*a = a2;
 	*b = b2;
-}
+}*/
 
 void	rotate(int *a, int members)
 {

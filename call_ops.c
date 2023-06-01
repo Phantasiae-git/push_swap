@@ -6,7 +6,7 @@
 /*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:54:16 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/26 15:04:09 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/01 17:01:51 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ void	ss(int *a, int *b, int membersa, int membersb)
 	ft_printf("ss");
 }
 
-void	pa(int **a, int **b, int *membersa, int *membersb)
+void	pa(int **a, int **b, int *membersa, int membersb)
 {
 	push(a, b, membersa, membersb);
 	ft_printf("pa\n");
 }
 
-void	pb(int **a, int **b, int *membersa, int *membersb)
+void	pb(int **a, int **b, int *membersa, int membersb)
 {
-	push(b, a, membersb, membersa);
+	push(b, a, &membersb, *membersa);
 	ft_printf("pb\n");
 }
 

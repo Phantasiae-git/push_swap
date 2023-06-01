@@ -6,7 +6,7 @@
 /*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 00:58:45 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/26 20:10:58 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/01 16:10:27 by phantasiae       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,12 @@ int	main(int argc, char **argv)
 	while ((++i + 1) < argc)
 		stacka[i] = ft_atol(argv[i + 1]);
 	stackb = NULL;
-	int membersb;
-	membersb=0;
 	if (check_sorted(stacka, membersa))
 		ft_printf("Already sorted\n");
 	else
 	{
 		ft_printf("Not sorted\n");
-		sort(stacka, stackb, 0, *membersa-1);
+		sort(stacka, stackb, 0, membersa-1);
 	}
 	return(0);
 }
