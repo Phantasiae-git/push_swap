@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 00:58:45 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/06/01 16:10:27 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/02 18:56:52 by rfontes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	check_sorted(int *a, int members)
 			return (0);
 		i++;
 	}
+	// printoutput(a, members);
+	exit(0);
 	return (1);
 }
 
@@ -101,7 +103,8 @@ int	main(int argc, char **argv)
 	stacka = (int *)malloc(sizeof(int) * (argc - 1));
 	if (!stacka)
 		return (error());
-	membersa = argc - 1;
+	*members()=argc-1;
+	membersa=*members();
 	i = -1;
 	while ((++i + 1) < argc)
 		stacka[i] = ft_atol(argv[i + 1]);
@@ -110,7 +113,15 @@ int	main(int argc, char **argv)
 		ft_printf("Already sorted\n");
 	else
 	{
-		ft_printf("Not sorted\n");
+		// ft_printf("Not sorted\n");
+		if(membersa<4)
+		{
+			if(membersa==2)
+				sa(stacka,2);
+			else if(membersa==3)
+				sort3(stacka, membersa);
+			return(0);
+		}
 		sort(stacka, stackb, 0, membersa-1);
 	}
 	return(0);

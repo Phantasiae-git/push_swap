@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 02:34:36 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/06/01 16:35:50 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/02 13:15:28 by rfontes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ void	swap(int *a, int members)
 	a[1] = temp;
 }
 
-void	push(int **a, int **b, int *membersa, int membersb)
+void	push(int **a, int **b, int *membersa, int *membersb)
 {
 	int	*a2;
 	int	*b2;
 	int	i;
 
 	//pushes from b to a
-	if (membersb == 0)
+	if (*membersb == 0)
 		return ;
 	a2 = malloc(sizeof(int) * (*membersa + 1));
-	if (membersb > 1)
-		b2 = malloc(sizeof(int) * (membersb - 1));
+	if (*membersb > 1)
+		b2 = malloc(sizeof(int) * (*membersb - 1));
 	i = -1;
 	while (++i < (*membersa))
 		a2[i + 1] = (*a)[i];
 	a2[0] = (*b)[0];
 	i = -1;
-	while (++i < (membersb - 1))
+	while (++i < (*membersb - 1))
 		b2[i] = (*b)[i + 1];
 	(*membersa)++;
-	membersb--;
+	(*membersb)--;
 	/*ft_printf("destination array:");
 	printoutput(a2, *membersa);
 	ft_printf("source array:");

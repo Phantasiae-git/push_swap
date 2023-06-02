@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   sort_main_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phantasiae <phantasiae@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rfontes- <rfontes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:26:51 by rfontes-          #+#    #+#             */
-/*   Updated: 2023/05/26 16:56:13 by phantasiae       ###   ########.fr       */
+/*   Updated: 2023/06/02 18:33:36 by rfontes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int *members(){
+	static int membersa;
+
+	return &membersa;
+}
 
 int	abs(int a)
 {
