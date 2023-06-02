@@ -1,2 +1,2 @@
 # push_swap
-Work in progress 🚧
+OK SO i made this push_swap algorithm out of my own head, it's unlike anyone else's, i used arrays instead of structs and i did it recursively using quicksort, in a way that stackb only serves to hold the values to be swapped. This would not pass at all on the 42 tests tho because it takes wayyyy too many operations (for example to sort 500 random values it can't take more than 11500 operations AT MOST, while it's recommended that it takes less than 8500, meanwhile my algorithm takes 829000 💀), but i still wanna keep it here and i'm proud of it because the logic is good. i'll eventually do a "correct" one to put here as well and to turn in as the project itself.
